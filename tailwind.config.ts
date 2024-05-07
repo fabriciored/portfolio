@@ -14,6 +14,7 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          'home': "url('/images/background/bg-home.png')",
       },
       fontFamily: { 
         "lato": ['Lato', 'sans-serif'] 
