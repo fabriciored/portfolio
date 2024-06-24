@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ProfileConfig {
+  id Int @id @default(autoincrement())
+  name String
+  professionalTitle String
+  subTitles String[]
+  titleTypewriter Boolean
+  stack StackItem[]
+  stackCarousel Boolean
+  carousel Boolean
+  linkedin String?
+  github String?
+  twitter String?
+  youtube String?
+}
+
+model Project {
+  id Int @id @default(autoincrement())
+  name String
+  description String
+  image String
+  url String
+  repository String
+  type ProjectType
+  tags String[]
+}
+
+model Guide {
+  id Int @id @default(autoincrement())
+  name String
+  description String
+  image String
+  url String
+  gategoryId Int
+  category GuideCategory @relation(fields: [gategoryId], references: [id])
+  language Language
+}
+
+model StackItem {
+  id Int @id @default(autoincrement())
+  name String
+  logo String
+  url String
+  profileId Int
+  profile ProfileConfig @relation(fields: [profileId], references: [id])
+}
+
+enum ProjectType {
+  Personal
+  Professional
+}
+
+model GuideCategory {
+  id Int @id @default(autoincrement())
+  name String
+  description String
+  guideId String
+  guides Guide[]
+}
+
+enum Language {
+  English
+  Portuguese
+}
