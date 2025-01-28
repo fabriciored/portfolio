@@ -17,7 +17,7 @@ export default function Profile() {
         className="rounded-full shadow-lg"
       />
     </div>
-    <div className="flex flex-col justify-between w-64">
+    <div className="flex flex-col justify-between w-52 sm:w-64">
       <div className="flex flex-col">
         <h1 className="text-3xl font-medium font-lato">Fabrício Santos</h1>
         <div className="flex flex-row mt-1 gap-2">
@@ -32,7 +32,7 @@ export default function Profile() {
           </Link>
         </div>
       </div>
-      <p className="text-2xl font-lato">
+      <p className="text-xl lg:text-2xl font-lato">
         <Typewriter
           words={["Backend", "Frontend", "Fullstack"]}
           loop={false}

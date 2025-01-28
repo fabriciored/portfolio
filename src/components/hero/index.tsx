@@ -4,7 +4,7 @@ import Profile from "./profile";
 
 export default function Hero() {
   return (
-    <div className="flex p-2 flex-col ">
+    <div className="flex p-2 flex-col">
       <Profile />
       <Slider />
     </div>
