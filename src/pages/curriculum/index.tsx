@@ -1,5 +1,4 @@
 import WidePage from "@/layout/page/wide";
-import { Document } from "react-pdf";
 
 export default function Curriculum() {
     return (
